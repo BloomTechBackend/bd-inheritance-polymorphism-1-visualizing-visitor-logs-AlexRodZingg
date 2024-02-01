@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+import java.sql.SQLOutput;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -49,6 +50,8 @@ public class VisitVisualizerTest {
         String output = capture.toString("UTF-8");
         String noHeader = output.replaceFirst("^.*\n", "");
         String strippedOutput = noHeader.replaceAll("[^@ X]", "");
+
+        System.out.println(strippedOutput);
 
         // THEN
         // The stripped output has 96 characters
